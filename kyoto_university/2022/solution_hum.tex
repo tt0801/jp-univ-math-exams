@@ -1,0 +1,78 @@
+\documentclass[dvipdfmx,a4paper]{jsarticle}
+    \pagestyle{plain}
+    \usepackage{amsmath}
+    \usepackage{amsthm}
+    \usepackage{amssymb}
+    \usepackage{graphicx}
+    \usepackage{tikz}
+    \usepackage{tkz-euclide}
+    \usepackage{here}
+    \usepackage{cancel}
+
+    \usetikzlibrary{angles}
+
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\C}{\mathbb{C}}
+    \newcommand{\Z}{\mathbb{Z}}
+    \newcommand{\N}{\mathbb{N}}
+    \newcommand{\Q}{\mathbb{Q}}
+    \newcommand{\Lra}{\Leftrightarrow}
+    \newcommand{\al}{\alpha}
+    \newcommand{\be}{\beta}
+    \newcommand{\ga}{\gamma}
+    \newcommand{\om}{\omega}
+    \newcommand{\De}{\Delta}
+    \newcommand{\oraw}{\overrightarrow}
+    \newcommand{\bs}{\backslash}
+    \newcommand{\2}{I\hspace{-1pt}I}
+    \newcommand{\3}{I\hspace{-1pt}I\hspace{-1pt}I}
+
+    \newtheorem{cs}{Case}
+    \newtheorem{cas}{Case}
+    \newtheorem{case}{Case}
+    \newtheorem{apf}{別解}
+    \newtheorem{anpf}{別解}
+
+    \usetikzlibrary{calc}
+    \title{令和６年度入学試験問題 数学（文系）とその解答}
+    \author{tt0801}
+    \date{\today}
+    
+    \begin{document}
+    \maketitle
+    \section{大問１}
+    \subsection{問題}
+    $5.4 < \log_4 2022 < 5.5$であることを示せ。ただし、$0.301 < \log_{10} 2 < 0.3011$であることは用いてよい。
+
+
+    \subsection{解答}
+    \begin{align*}
+        \log_4 2022 &= \dfrac{\log_{10} 2022}{\log_{10} 4} \\
+            &= \dfrac{\log_{10} 2 + \log_{10} 1011}{2\log_{10} 2} \\
+            &= \dfrac{1}{2} + \dfrac{\log_{10} 1011}{2\log_{10} 2} \ (=A \mathrm{とおく})
+    \end{align*}
+    である。ここで、$\log_{10} 1011 > \log_{10} 1000 = 3$より、
+    \begin{align*}
+        A & > \dfrac{1}{2} + \dfrac{3}{2\log_{10} 2} \\
+        & > \dfrac{1}{2} + \dfrac{3}{2\cdot 0.3011} \ (\because \log_{10} 2 < 0.3011)\\
+        &= \dfrac{33011}{6022} \\
+        &> 5.4
+    \end{align*}
+    なので、$\log_4 2022 > 5.4$である。
+    
+    また、$\log_{10} 1011 < \log_{10} 1024 = 10 \log_{10} 2$なので、
+    \begin{align*}
+        A & < \dfrac{1}{2} + \dfrac{10 \log_{10} 2}{2\log_{10} 2} \\
+        &= \dfrac{1}{2} + 5\\
+        &= 5.5
+    \end{align*}
+    である。よって、$\log_4 2022 < 5.5$となる。
+
+    以上より、$5.4 < \log_4 2022 < 5.5$が示された。
+
+
+    \subsection{解説}
+    $\log_{10} 2$の評価式が与えられているので、$\log_{10} 2$を作ることを意識して式変形をする。
+
+
+\end{document}
