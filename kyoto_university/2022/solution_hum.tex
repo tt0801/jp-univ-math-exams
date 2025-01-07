@@ -34,7 +34,7 @@
     \newtheorem{anpf}{別解}
 
     \usetikzlibrary{calc}
-    \title{令和６年度入学試験問題 数学（文系）とその解答}
+    \title{２０２２年度京大数学（文系）の解答}
     \author{tt0801}
     \date{\today}
     
@@ -73,6 +73,47 @@
 
     \subsection{解説}
     $\log_{10} 2$の評価式が与えられているので、$\log_{10} 2$を作ることを意識して式変形をする。
+
+    \section{大問２}
+    \subsection{問題}
+    下図の三角柱$\mathrm{ABC - DEF}$において、Aを始点として、辺に沿って頂点を$n$回移動する。すなわち、
+    この移動経路
+    \begin{equation*}
+        \mathrm{
+            P_0 \rightarrow P_1 \rightarrow P_2 \rightarrow \cdots 
+            \rightarrow P_{n-1} \rightarrow P_n \quad (\mathrm{ただし} P_0 = A)
+        }
+    \end{equation*}
+    において、$\mathrm{P_0P_1, P_1P_2, \cdots, P_{n-1}P_n}$はすべて辺であるとする。また、
+    同じ頂点を何度通ってもよいものとする。このような移動経路で、終点$\mathrm{P_n}$が
+    $\mathrm{A, B, C}$のいずれかとなるものの総数$a_n$を求めよ。
+
+    \begin{tikzpicture}
+        % Draw the base square A - B - E - D
+        \draw[thick] (0,0) -- (4,0) -- (4,-5) -- (0,-5) -- cycle;
+
+        % Draw the top triangle A - C - B
+        \draw[thick] (0,0) -- (3,1.5) -- (4,0) -- cycle;
+
+        % Connect base to apex of the triangle C - F
+        \draw[thick, dashed] (3,1.5) -- (3,-3);
+
+        % Draw the diagonal lines of the base D - F, E - F
+        \draw[thick, dashed] (0,-5) -- (3,-3);
+        \draw[thick, dashed] (4,-5) -- (3,-3);
+
+        % Label the points
+        \node[anchor=east] at (0,0) {A};
+        \node[anchor=west] at (4,0) {B};
+        \node[anchor=east] at (3,1.7) {C};
+        \node[anchor=east] at (0,-5) {D};
+        \node[anchor=west] at (4,-5) {E};
+        \node[anchor=east] at (3,-2.8) {F};
+    \end{tikzpicture}
+
+    \subsection{解答}
+
+    \subsection{解説}
 
 
 \end{document}
