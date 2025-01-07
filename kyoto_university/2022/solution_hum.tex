@@ -112,8 +112,42 @@
     \end{tikzpicture}
 
     \subsection{解答}
+    各頂点から隣接する他の頂点に移動する方法は、3通りである。よって、$n$回移動した時の全ての経路の
+    場合の数は、$3^n$である。$b_n = 3^n-a_n$とおくと、終点$\mathrm{P_n}$が
+    $\mathrm{D,E,F}$のいずれかとなるものの総数である。
+
+    $\mathrm{P_n}$が頂点$\mathrm{A,B,C}$のいずれかにいる時、
+    $\mathrm{P_{n+1}}$が再び頂点$\mathrm{A,B,C}$のいずれかにいる経路は２通りである。
+    一方で、$\mathrm{P_n}$が頂点$\mathrm{D,E,F}$のいずれかにいる時、
+    $\mathrm{P_{n+1}}$が頂点$\mathrm{A,B,C}$のいずれかにいる経路は1通りである。
+    以上より、
+    \begin{align*}
+        a_{n+1} &= 2a_n + b_n \\
+                &= 2a_n + (3^n-a_n) \\
+                &= a_n + 3^n
+    \end{align*}
+    を得る。$a_0=1$とおけば、この漸化式は0以上の整数$n$で成立する。
+    $n \geq 1$の場合は、
+    \begin{align*}\displaystyle
+        a_n &= a_0 + \sum_{k=0}^{n-1} (a_{k+1} - a_k) \\
+            &= 1 + \sum_{k=0}^{n-1} 3^k \\
+            &= 1 + \dfrac{3^n-1}{3-1} \\
+            &= \dfrac{3^n+1}{2}
+    \end{align*}
+    が成り立つ。これは、$n=0$の場合も成立。
+
+    以上より、
+    \begin{equation*}
+        a_n = \dfrac{3^n+1}{2}.
+    \end{equation*}
+    
 
     \subsection{解説}
-
+    $\mathrm{P_n}$の位置について、事象は次の２通りしかない。
+    \begin{itemize}
+        \item $\mathrm{P_n}$は$\mathrm{A, B, C}$のいずれか、
+        \item $\mathrm{P_n}$は$\mathrm{D, E, F}$のいずれか。
+    \end{itemize}
+    図の対称性から、これらの事象について漸化式を立てられそうだと見通しがつく。
 
 \end{document}
