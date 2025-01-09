@@ -81,12 +81,12 @@
     \begin{equation*}
         \mathrm{
             P_0 \rightarrow P_1 \rightarrow P_2 \rightarrow \cdots 
-            \rightarrow P_{n-1} \rightarrow P_n \quad (\mathrm{ただし} P_0 = A)
+            \rightarrow P_{n-1} \rightarrow P_n \quad (ただし P_0 = A)
         }
     \end{equation*}
     において, $\mathrm{P_0P_1, P_1P_2, \cdots, P_{n-1}P_n}$はすべて辺であるとする. また, 
     同じ頂点を何度通ってもよいものとする. このような移動経路で, 終点$\mathrm{P_n}$が
-    $\mathrm{A, B, C}$のいずれかとなるものの総数$a_n$を求めよ. 
+    A, B, Cのいずれかとなるものの総数$a_n$を求めよ. 
 
     \begin{tikzpicture}
         % Draw the base square A - B - E - D
@@ -114,12 +114,12 @@
     \subsection{解答}
     各頂点から隣接する他の頂点に移動する方法は, 3通りである. よって, $n$回移動した時の全ての経路の
     場合の数は, $3^n$である. $b_n = 3^n-a_n$とおくと, 終点$\mathrm{P_n}$が
-    $\mathrm{D,E,F}$のいずれかとなるものの総数である. 
+    D, E, Fのいずれかとなるものの総数である. 
 
-    $\mathrm{P_n}$が頂点$\mathrm{A,B,C}$のいずれかにいる時, 
-    $\mathrm{P_{n+1}}$が再び頂点$\mathrm{A,B,C}$のいずれかにいる経路は２通りである. 
-    一方で, $\mathrm{P_n}$が頂点$\mathrm{D,E,F}$のいずれかにいる時, 
-    $\mathrm{P_{n+1}}$が頂点$\mathrm{A,B,C}$のいずれかにいる経路は1通りである. 
+    $\mathrm{P_n}$が頂点A, B, Cのいずれかにいる時, 
+    $\mathrm{P_{n+1}}$が再び頂点A, B, Cのいずれかにいる経路は2通りである. 
+    一方で, $\mathrm{P_n}$が頂点D, E, Fのいずれかにいる時, 
+    $\mathrm{P_{n+1}}$が頂点A, B, Cのいずれかにいる経路は1通りである. 
     以上より, 
     \begin{align*}
         a_{n+1} &= 2a_n + b_n \\
@@ -145,8 +145,8 @@
     \subsection{解説}
     $\mathrm{P_n}$の位置について, 事象は次の２通りしかない. 
     \begin{itemize}
-        \item $\mathrm{P_n}$は$\mathrm{A, B, C}$のいずれか, 
-        \item $\mathrm{P_n}$は$\mathrm{D, E, F}$のいずれか. 
+        \item $\mathrm{P_n}$はA, B, Cのいずれか, 
+        \item $\mathrm{P_n}$はD, E, Fのいずれか. 
     \end{itemize}
     図の対称性から, これらの事象について漸化式を立てられそうだと見通しがつく. 
 
@@ -174,13 +174,13 @@
         pq = -4.
     \end{equation}
     特に$p \neq q$である. 
-    また, $L_1$と$L_2$の交点の座標は, 方程式(\ref{pb3_eq1}), (\ref{pb3_eq2})を連立して, 
+    また, $L_1$と$L_2$の交点の座標は, 方程式\eqref{pb3_eq1}, \eqref{pb3_eq2}を連立して, 
     $\left(\dfrac{p+q}{2}, \dfrac{pq}{4}\right)$と分かる. 
     問題文の条件より$\dfrac{p+q}{2} = \dfrac{3}{2}$, すなわち
     \begin{equation} \label{pb3_eq4}
         p + q = 3
     \end{equation}
-    である. 式(\ref{pb3_eq3}),(\ref{pb3_eq4})より, $p,q$は$t$についての二次方程式
+    である. 式\eqref{pb3_eq3},\eqref{pb3_eq4}より, $p,q$は$t$についての二次方程式
     $t^2 -3t -4 = 0$の解である. 因数分解して$(t-4)(t+1)=0$なので, 
     \begin{equation*}
         (p,q) = (-1, 4)
@@ -245,5 +245,76 @@
     \subsection{解説}
     覚える必要は全くないが, 問題の面積は, いわゆる$\dfrac{1}{6}$公式で求まる面積の半分なので, 
     知っていれば検算は容易である. 
+
+    \section{大問４}
+    \subsection{問題}
+    $a,b$を正の実数とする. 直線$L: ax+by=1$と曲線$y=-\dfrac{1}{x}$との２つの交点のうち, 
+    $y$座標が正のものをP, 負のものをQとする. また, $L$と
+    $x$軸の交点をRとし, $L$と$y$軸の交点をSとする. $a,b$が条件
+    \begin{equation*}\mathrm{
+        \dfrac{PQ}{RS} = \sqrt{2}
+    }
+    \end{equation*}
+    を満たしながら動くとき, 線分PQの中点の軌跡を求めよ. 
+
+    \subsection{解答}
+    4点P,Q,R,Sは全て直線$L$上にあるのでPQとRSの
+    比は, 「2点P, Qの$x$座標の差」と「2点R, Sの$x$座標の差」の比に一致する. 
+    Rの座標は$\left(\dfrac{1}{a},0\right)$, 
+    Sの座標は$\left(0,\dfrac{1}{b}\right)$なので, 
+    2点R, Sの$x$座標の差は$\dfrac{1}{a}$である. 
+    $y=-\dfrac{1}{x}$を$ax+by=1$に代入して, 式を整理すると
+    \begin{equation*}
+        ax^2-x -b =0
+    \end{equation*}
+    を得る. 判別式$D$は$D=1 + 4ab >0$であるので, 正の実数$a,b$の値によらず, 
+    異なる二つの実数解$x=p,q \ (p>q)$を持つ. 
+    二次方程式の解と係数の関係より, 
+    \begin{align}
+        p + q &= \dfrac{1}{a}, \\
+        pq &= -\dfrac{b}{a}
+    \end{align}
+    である. 特に$pq<0$なので, $p>0>q$である. また, 2点P, Qの$x$座標の差の２乗は, 
+    \[
+        (p-q)^2 = (p+q)^2 - 4pq =\dfrac{1+4ab}{a^2}
+    \]
+    である. よって, 
+    \begin{align*}
+        2 &= \left(\dfrac{\mathrm{PQ}}{\mathrm{RS}} \right)^2 \\
+        &= \left(\dfrac{\mathrm{2点P, Qの}x\mathrm{座標の差}}{\mathrm{2点R, Sの}x\mathrm{座標の差}} \right)^2 \\
+        &= \dfrac{\dfrac{1+4ab}{a^2}}{\dfrac{1}{a^2}} \\
+        &= 4ab + 1
+    \end{align*}
+    である. ゆえに, $ab=\dfrac{1}{4}$. 
+
+    Pの座標は$\left(p, -\dfrac{1}{p}\right)$, Qの座標は$\left(q, -\dfrac{1}{q} \right)$
+    であるから, 線分PQの中点の座標$(X,Y)$は, 
+    \begin{align*}
+        X = \dfrac{p+q}{2}, \quad Y = -\dfrac{p+q}{2pq}
+    \end{align*}
+    を満たす. $p + q = \dfrac{1}{a}$, $pq = -\dfrac{b}{a}$を代入して, 
+    \begin{align*}
+        X = \dfrac{1}{2a}, \quad Y = \dfrac{1}{2b}
+    \end{align*}
+    である. $a,b$は正の実数なので, $X,Y$も正の実数であり, 
+    \begin{equation} \label{pb4_eq1}
+        a = \dfrac{1}{2X}, \quad b = \dfrac{1}{2Y}
+    \end{equation}
+    を$ab=\dfrac{1}{4}$に代入して, $XY=1$を得る. すなわち, 線分PQの中点は, 
+    双曲線$y=\dfrac{1}{x} \ (x>0)$上に存在する. 
+
+    逆に, 双曲線$y=\dfrac{1}{x} \ (x>0)$の上の点$(X,Y)$に対して, \eqref{pb4_eq1}を
+    満たす$a,b$を与えれば, $a,b$は正の実数であり, 確かにP,Q,R,Sを考えることができて, 
+    \begin{equation*}
+        \left(\dfrac{\mathrm{PQ}}{\mathrm{RS}} \right)^2 = 2
+    \end{equation*}
+    が成り立つ. すなわち, $\mathrm{\dfrac{PQ}{RS} = \sqrt{2}}$を満たす. 
+
+    以上より, 求める軌跡は双曲線$y=\dfrac{1}{x} \ (x>0)$である. 
+
+    \subsection{解説}
+    十分性の確認を忘れないこと. 
+
+
 
 \end{document}
