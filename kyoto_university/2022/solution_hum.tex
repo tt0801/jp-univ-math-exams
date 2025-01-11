@@ -307,14 +307,120 @@
     \begin{equation*}
         \left(\dfrac{\mathrm{PQ}}{\mathrm{RS}} \right)^2 = 2
     \end{equation*}
-    が成り立つ. すなわち, $\mathrm{\dfrac{PQ}{RS} = \sqrt{2}}$を満たす. そして、線分PQの中点の
-    座標は$(X,Y)$である。
+    が成り立つ. すなわち, $\mathrm{\dfrac{PQ}{RS} = \sqrt{2}}$を満たす. そして, 線分PQの中点の
+    座標は$(X,Y)$である. 
 
     以上より, 求める軌跡は双曲線$y=\dfrac{1}{x} \ (x>0)$である. 
 
     \subsection{解説}
     十分性の確認を忘れないこと. 
 
+    \section{大問５}
+    \subsection{問題}
+    四面体OABCが
+    \begin{equation*}
+        \mathrm{
+            OA = 4,\ OB=AB=BC=3,\ OC=AC=2\sqrt{3}
+        }
+    \end{equation*}
+    を満たしているとする. 点Pを辺BC上の点とし, $\triangle \mathrm{OAP}$の
+    重心をGとする. このとき, 次の各問に答えよ. 
+    \begin{itemize}
+        \item [(1)] $\oraw{\mathrm{PG}} \perp \oraw{\mathrm{OA}}$を示せ. 
+        \item [(2)] Pが辺BC上を動くとき, PGの最小値を求めよ. 
+    \end{itemize}
+
+    \subsection{解答}
+    \begin{itemize}
+        \item [(1)] 一次独立なベクトル$\oraw{\mathrm{OA}}$, $\oraw{\mathrm{OB}}$, $\oraw{\mathrm{OC}}$
+        に着目する. 
+        \begin{align*}
+            \oraw{\mathrm{OA}} \cdot \oraw{\mathrm{OB}}
+            &= \dfrac{|\oraw{\mathrm{OA}}|^2 + |\oraw{\mathrm{OB}}|^2 - |\oraw{\mathrm{AB}}|^2}{2} \\
+            &= \dfrac{16 + 9 - 9}{2} \\
+            &= 8, \\
+            \oraw{\mathrm{OB}} \cdot \oraw{\mathrm{OC}}
+            &= \dfrac{|\oraw{\mathrm{OB}}|^2 + |\oraw{\mathrm{OC}}|^2 - |\oraw{\mathrm{BC}}|^2}{2} \\
+            &= \dfrac{9 + 12 - 9}{2} \\
+            &= 6, \\
+            \oraw{\mathrm{OA}} \cdot \oraw{\mathrm{OC}}
+            &= \dfrac{|\oraw{\mathrm{OA}}|^2 + |\oraw{\mathrm{OC}}|^2 - |\oraw{\mathrm{AC}}|^2}{2} \\
+            &= \dfrac{16 + 12 - 12}{2} \\
+            &= 8.
+        \end{align*}
+        点Pは辺BC上にあるので, 0以上1以下の実数$t$を用いて
+        \begin{equation*}
+            \oraw{\mathrm{OP}} = t\oraw{\mathrm{OB}} + (1-t)\oraw{\mathrm{OC}}
+        \end{equation*}
+        と表せる. 点Gは$\triangle \mathrm{OAP}$の重心なので, 
+        \begin{align*}
+            \oraw{\mathrm{OG}} &= \dfrac{1}{3}\oraw{\mathrm{OA}} + \dfrac{1}{3}\oraw{\mathrm{OP}}
+        \end{align*}
+        だから, 
+        \begin{align*}
+            \oraw{\mathrm{PG}} &= \oraw{\mathrm{OG}} - \oraw{\mathrm{OP}} \\
+            &= \dfrac{1}{3}\oraw{\mathrm{OA}} - \dfrac{2}{3}\oraw{\mathrm{OP}} \\
+            &= \dfrac{1}{3}\oraw{\mathrm{OA}} - \dfrac{2}{3}t\oraw{\mathrm{OB}} - \dfrac{2}{3} (1-t)\oraw{\mathrm{OC}}
+        \end{align*}
+        である. 特に, $\oraw{\mathrm{OA}}$, $\oraw{\mathrm{OB}}$, $\oraw{\mathrm{OC}}$の係数が全て
+        0になることはないので, 2点P, Gは一致しない. 
+        \begin{align*}
+            \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OA}} &=
+            \dfrac{1}{3}|\oraw{\mathrm{OA}}|^2 
+            - \dfrac{2}{3}t\oraw{\mathrm{OB}} \cdot \oraw{\mathrm{OA}} 
+            - \dfrac{2}{3} (1-t)\oraw{\mathrm{OC}} \cdot \oraw{\mathrm{OA}} \\
+            &= \dfrac{1}{3} \cdot 16 - \dfrac{2}{3}t \cdot 8 - \dfrac{2}{3} (1-t) \cdot 8 \\
+            &= 0
+        \end{align*}
+        で, $\mathrm{PG} >0$, $\mathrm{OA}=4>0$なので, 
+        $\oraw{\mathrm{PG}} \perp \oraw{\mathrm{OA}}$が導けた. 
+
+        \item [(2)] $|\oraw{\mathrm{PG}}|^2$の最小値について考える. 
+        \begin{align*}
+            |\oraw{\mathrm{PG}}|^2 &= \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{PG}} \\
+            &= \oraw{\mathrm{PG}} \cdot \left(\dfrac{1}{3}\oraw{\mathrm{OA}} - \dfrac{2}{3}t\oraw{\mathrm{OB}} - \dfrac{2}{3} (1-t)\oraw{\mathrm{OC}} \right) \\
+            &= - \dfrac{2}{3}t \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OB}} - \dfrac{2}{3} (1-t) \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OC}}
+        \end{align*}
+        である. 
+        \begin{align*}
+            \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OB}} &=
+            \dfrac{1}{3}\oraw{\mathrm{OA}} \cdot \oraw{\mathrm{OB}} 
+            - \dfrac{2}{3}t |\oraw{\mathrm{OB}}|^2
+            - \dfrac{2}{3} (1-t)\oraw{\mathrm{OC}} \cdot \oraw{\mathrm{OB}} \\
+            &= \dfrac{1}{3} \cdot 8 - \dfrac{2}{3}t \cdot 9 - \dfrac{2}{3} (1-t) \cdot 6 \\
+            &= -2t - \dfrac{4}{3}, \\
+            \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OC}} &=
+            \dfrac{1}{3}\oraw{\mathrm{OA}} \cdot \oraw{\mathrm{OC}} 
+            - \dfrac{2}{3}t \oraw{\mathrm{OB}} \cdot \oraw{\mathrm{OC}} 
+            - \dfrac{2}{3} (1-t) |\oraw{\mathrm{OC}}|^2 \\
+            &= \dfrac{1}{3} \cdot 8 - \dfrac{2}{3}t \cdot 6 - \dfrac{2}{3} (1-t) \cdot 12 \\
+            &= 4t - \dfrac{16}{3} \\
+        \end{align*}
+        なので, 
+        \begin{align*}
+            |\oraw{\mathrm{PG}}|^2 
+            &= - \dfrac{2}{3}t \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OB}} - \dfrac{2}{3} (1-t) \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OC}} \\
+            &= - \dfrac{2}{3}t \left(-2t - \dfrac{4}{3}\right) - \dfrac{2}{3} (1-t) \left(4t - \dfrac{16}{3}\right) \\
+            &= 4t^2 - \dfrac{16}{3}t + \dfrac{32}{9} \\
+            &= 4 \left(t- \dfrac{2}{3}\right)^2 + \dfrac{16}{9} \\
+            &\geq \dfrac{16}{9}. 
+        \end{align*}
+        等号成立条件は, $t=\dfrac{2}{3}$であり, これは$0\leq t\leq 1$を満たす. 
+        このとき, 点Pは辺BCを1:2に内分する点である. また, $\mathrm{PG} = \sqrt{|\oraw{\mathrm{PG}}|^2 } = \dfrac{4}{3}$. 
+
+        以上より, 点Pは辺BCを1:2に内分する点である時, PGは最小値$\dfrac{4}{3}$をとる. 
+
+    \end{itemize}
+    
+
+
+    
+
+    \subsection{解説}
+    ベクトルの問題では, 基底(一次独立かつ, 空間の任意のベクトルが基底のベクトルの一次結合で表せる)
+    に着目して式変形しよう. 本問では例えば, $\left\{\oraw{\mathrm{OA}}, \oraw{\mathrm{OB}}, \oraw{\mathrm{OC}}\right\}$
+    が基底である. 
+    
 
 
 \end{document}
