@@ -1,0 +1,260 @@
+\documentclass[dvipdfmx,a4paper]{jsarticle}
+    \pagestyle{plain}
+    \usepackage{amsmath}
+    \usepackage{amsthm}
+    \usepackage{amssymb}
+    \usepackage{graphicx}
+    \usepackage{tikz}
+    \usepackage{tkz-euclide}
+    \usepackage{here}
+    \usepackage{cancel}
+
+    \usetikzlibrary{angles}
+
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\C}{\mathbb{C}}
+    \newcommand{\Z}{\mathbb{Z}}
+    \newcommand{\N}{\mathbb{N}}
+    \newcommand{\Q}{\mathbb{Q}}
+    \newcommand{\Lra}{\Leftrightarrow}
+    \newcommand{\al}{\alpha}
+    \newcommand{\be}{\beta}
+    \newcommand{\ga}{\gamma}
+    \newcommand{\om}{\omega}
+    \newcommand{\De}{\Delta}
+    \newcommand{\oraw}{\overrightarrow}
+    \newcommand{\bs}{\backslash}
+    \newcommand{\2}{I\hspace{-1pt}I}
+    \newcommand{\3}{I\hspace{-1pt}I\hspace{-1pt}I}
+
+    \newtheorem{cs}{Case}
+    \newtheorem{cas}{Case}
+    \newtheorem{case}{Case}
+    \newtheorem{apf}{別解}
+    \newtheorem{anpf}{別解}
+
+    \usetikzlibrary{calc}
+    \title{２０２２年度京大数学（理系）の解答}
+    \author{tt0801}
+    \date{\today}
+    
+    \begin{document}
+    \maketitle
+    \section{大問１}
+    \subsection{問題}
+    $5.4 < \log_4 2022 < 5.5$であることを示せ. ただし, $0.301 < \log_{10} 2 < 0.3011$であることは用いてよい. 
+
+
+    \subsection{解答}
+    \begin{align*}
+        \log_4 2022 &= \dfrac{\log_{10} 2022}{\log_{10} 4} \\
+            &= \dfrac{\log_{10} 2 + \log_{10} 1011}{2\log_{10} 2} \\
+            &= \dfrac{1}{2} + \dfrac{\log_{10} 1011}{2\log_{10} 2} \ (=A \mathrm{とおく})
+    \end{align*}
+    である. ここで, $\log_{10} 1011 > \log_{10} 1000 = 3$より, 
+    \begin{align*}
+        A & > \dfrac{1}{2} + \dfrac{3}{2\log_{10} 2} \\
+        & > \dfrac{1}{2} + \dfrac{3}{2\cdot 0.3011} \ (\because \log_{10} 2 < 0.3011)\\
+        &= \dfrac{33011}{6022} \\
+        &> 5.4
+    \end{align*}
+    なので, $\log_4 2022 > 5.4$である. 
+    
+    また, $\log_{10} 1011 < \log_{10} 1024 = 10 \log_{10} 2$なので, 
+    \begin{align*}
+        A & < \dfrac{1}{2} + \dfrac{10 \log_{10} 2}{2\log_{10} 2} \\
+        &= \dfrac{1}{2} + 5\\
+        &= 5.5
+    \end{align*}
+    である. よって, $\log_4 2022 < 5.5$となる. 
+
+    以上より, $5.4 < \log_4 2022 < 5.5$が示された. 
+
+
+    \subsection{解説}
+    $\log_{10} 2$の評価式が与えられているので, $\log_{10} 2$を作ることを意識して式変形をする. 
+
+    \section{大問２}
+    \subsection{問題}
+
+
+    \subsection{解答}
+    
+
+    \subsection{解説}
+
+
+    \section{大問３}
+    \subsection{問題}
+    $n$を自然数とする. ３つの整数$n^2+2$, $n^4+2$, $n^6+2$の最大公約数$A_n$を求めよ. 
+
+    \subsection{解答}
+    $(n^4+2) - (n^2+2) = n^2(n^2-1)$なので, $n^4+2$と$n^2+2$の最大公約数は, 
+    $n^2+2$と$n^2(n^2-1)$の最大公約数に一致する. 
+
+    $n^2+2$と$n^2$の最大公約数について考える. 
+    $n^2+2$と$n^2$の公約数は, $(n^2+2)-n^2=2$を割り切る. 
+    ゆえに, $n$が偶数の時は, $n^2+2$, $n^2$はともに偶数なので, 最大公約数は2である. 
+    $n$が奇数の時は, $n^2+2$, $n^2$はともに奇数なので, 最大公約数は1である. 
+
+    $n^2+2$と$n^2-1$の最大公約数について考える. 
+    $n^2+2$と$n^2-1$の公約数は, $(n^2+2)-(n^2-1)=3$を割り切る. 
+    ゆえに, $n$が3の倍数の時は, $n^2+2$, $n^2-1$はともに3の倍数ではないので, 最大公約数は1である. 
+    $n$が3の倍数でない時は, $n^2+2$, $n^2-1$はともに3の倍数なので, 最大公約数は3である. 
+
+    $n^2$と$n^2-1$は互いに素なので, $n^2+2$と$n^2(n^2-1)$の最大公約数は, 
+    $n^2+2$と$n^2$の最大公約数と$n^2+2$と$n^2-1$の最大公約数の積である. 
+
+    以上より, $n^2+2$と$n^2(n^2-1)$の最大公約数$B_n$は, 
+    \begin{eqnarray*}
+        B_n = \left\{
+            \begin{array}{lll}
+                2 & (n\mathrm{は偶数かつ3の倍数, すなわち6の倍数}), \\
+                6 & (n\mathrm{は偶数だが3の倍数ではない, すなわち6で割って2または4余る}), \\
+                1 & (n\mathrm{は奇数かつ3の倍数, すなわち6で割って3余る}), \\
+                3 & (n\mathrm{は奇数だが3の倍数ではない, すなわち6で割って1または5余る})
+            \end{array}
+        \right.
+    \end{eqnarray*}
+    で与えられる. これが$n^4+2$と$n^2+2$の最大公約数に一致するので, 
+    $A_n$は, $B_n$と$n^6+2$の最大公約数である. 
+    
+    一方で, $n^6+2 = n^2+2 + (n^2+1) \cdot n^2(n^2-1)$と表せるので, 
+    $n^6+2$は, $n^2+2$と$n^2(n^2-1)$の最大公約数$B_n$で割り切れる. 
+
+    以上より, $A_n = B_n$であるので, 
+    \begin{eqnarray*}
+        A_n = \left\{
+            \begin{array}{lll}
+                2 & (n\mathrm{は6の倍数}), \\
+                6 & (n\mathrm{は6で割って2または4余る}), \\
+                1 & (n\mathrm{は6で割って3余る}), \\
+                3 & (n\mathrm{は6で割って1または5余る})
+            \end{array}
+        \right.
+    \end{eqnarray*}
+    である. 
+
+
+    \subsection{解説}
+    ユークリッドの互除法が背景にある問題である. 整数$x,y,q,r$について, $x = qy +r$
+    と表せる時, $x,y$の最大公約数は$y,r$の最大公約数と一致する. 
+
+
+    \section{大問４}
+    \subsection{問題}
+    四面体OABCが
+    \begin{equation*}
+        \mathrm{
+            OA = 4,\ OB=AB=BC=3,\ OC=AC=2\sqrt{3}
+        }
+    \end{equation*}
+    を満たしているとする. 点Pを辺BC上の点とし, $\triangle \mathrm{OAP}$の
+    重心をGとする. このとき, 次の各問に答えよ. 
+    \begin{itemize}
+        \item [(1)] $\oraw{\mathrm{PG}} \perp \oraw{\mathrm{OA}}$を示せ. 
+        \item [(2)] Pが辺BC上を動くとき, PGの最小値を求めよ. 
+    \end{itemize}
+
+    \subsection{解答}
+    \begin{itemize}
+        \item [(1)] 一次独立なベクトル$\oraw{\mathrm{OA}}$, $\oraw{\mathrm{OB}}$, $\oraw{\mathrm{OC}}$
+        に着目する. 
+        \begin{align*}
+            \oraw{\mathrm{OA}} \cdot \oraw{\mathrm{OB}}
+            &= \dfrac{|\oraw{\mathrm{OA}}|^2 + |\oraw{\mathrm{OB}}|^2 - |\oraw{\mathrm{AB}}|^2}{2} \\
+            &= \dfrac{16 + 9 - 9}{2} \\
+            &= 8, \\
+            \oraw{\mathrm{OB}} \cdot \oraw{\mathrm{OC}}
+            &= \dfrac{|\oraw{\mathrm{OB}}|^2 + |\oraw{\mathrm{OC}}|^2 - |\oraw{\mathrm{BC}}|^2}{2} \\
+            &= \dfrac{9 + 12 - 9}{2} \\
+            &= 6, \\
+            \oraw{\mathrm{OA}} \cdot \oraw{\mathrm{OC}}
+            &= \dfrac{|\oraw{\mathrm{OA}}|^2 + |\oraw{\mathrm{OC}}|^2 - |\oraw{\mathrm{AC}}|^2}{2} \\
+            &= \dfrac{16 + 12 - 12}{2} \\
+            &= 8.
+        \end{align*}
+        点Pは辺BC上にあるので, 0以上1以下の実数$t$を用いて
+        \begin{equation*}
+            \oraw{\mathrm{OP}} = t\oraw{\mathrm{OB}} + (1-t)\oraw{\mathrm{OC}}
+        \end{equation*}
+        と表せる. 点Gは$\triangle \mathrm{OAP}$の重心なので, 
+        \begin{align*}
+            \oraw{\mathrm{OG}} &= \dfrac{1}{3}\oraw{\mathrm{OA}} + \dfrac{1}{3}\oraw{\mathrm{OP}}
+        \end{align*}
+        だから, 
+        \begin{align*}
+            \oraw{\mathrm{PG}} &= \oraw{\mathrm{OG}} - \oraw{\mathrm{OP}} \\
+            &= \dfrac{1}{3}\oraw{\mathrm{OA}} - \dfrac{2}{3}\oraw{\mathrm{OP}} \\
+            &= \dfrac{1}{3}\oraw{\mathrm{OA}} - \dfrac{2}{3}t\oraw{\mathrm{OB}} - \dfrac{2}{3} (1-t)\oraw{\mathrm{OC}}
+        \end{align*}
+        である. 特に, $\oraw{\mathrm{OA}}$, $\oraw{\mathrm{OB}}$, $\oraw{\mathrm{OC}}$の係数が全て
+        0になることはないので, 2点P, Gは一致しない. 
+        \begin{align*}
+            \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OA}} &=
+            \dfrac{1}{3}|\oraw{\mathrm{OA}}|^2 
+            - \dfrac{2}{3}t\oraw{\mathrm{OB}} \cdot \oraw{\mathrm{OA}} 
+            - \dfrac{2}{3} (1-t)\oraw{\mathrm{OC}} \cdot \oraw{\mathrm{OA}} \\
+            &= \dfrac{1}{3} \cdot 16 - \dfrac{2}{3}t \cdot 8 - \dfrac{2}{3} (1-t) \cdot 8 \\
+            &= 0
+        \end{align*}
+        で, $\mathrm{PG} >0$, $\mathrm{OA}=4>0$なので, 
+        $\oraw{\mathrm{PG}} \perp \oraw{\mathrm{OA}}$が導けた. 
+
+        \item [(2)] $|\oraw{\mathrm{PG}}|^2$の最小値について考える. 
+        \begin{align*}
+            |\oraw{\mathrm{PG}}|^2 &= \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{PG}} \\
+            &= \oraw{\mathrm{PG}} \cdot \left(\dfrac{1}{3}\oraw{\mathrm{OA}} - \dfrac{2}{3}t\oraw{\mathrm{OB}} - \dfrac{2}{3} (1-t)\oraw{\mathrm{OC}} \right) \\
+            &= - \dfrac{2}{3}t \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OB}} - \dfrac{2}{3} (1-t) \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OC}}
+        \end{align*}
+        である. 
+        \begin{align*}
+            \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OB}} &=
+            \dfrac{1}{3}\oraw{\mathrm{OA}} \cdot \oraw{\mathrm{OB}} 
+            - \dfrac{2}{3}t |\oraw{\mathrm{OB}}|^2
+            - \dfrac{2}{3} (1-t)\oraw{\mathrm{OC}} \cdot \oraw{\mathrm{OB}} \\
+            &= \dfrac{1}{3} \cdot 8 - \dfrac{2}{3}t \cdot 9 - \dfrac{2}{3} (1-t) \cdot 6 \\
+            &= -2t - \dfrac{4}{3}, \\
+            \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OC}} &=
+            \dfrac{1}{3}\oraw{\mathrm{OA}} \cdot \oraw{\mathrm{OC}} 
+            - \dfrac{2}{3}t \oraw{\mathrm{OB}} \cdot \oraw{\mathrm{OC}} 
+            - \dfrac{2}{3} (1-t) |\oraw{\mathrm{OC}}|^2 \\
+            &= \dfrac{1}{3} \cdot 8 - \dfrac{2}{3}t \cdot 6 - \dfrac{2}{3} (1-t) \cdot 12 \\
+            &= 4t - \dfrac{16}{3} \\
+        \end{align*}
+        なので, 
+        \begin{align*}
+            |\oraw{\mathrm{PG}}|^2 
+            &= - \dfrac{2}{3}t \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OB}} - \dfrac{2}{3} (1-t) \oraw{\mathrm{PG}} \cdot \oraw{\mathrm{OC}} \\
+            &= - \dfrac{2}{3}t \left(-2t - \dfrac{4}{3}\right) - \dfrac{2}{3} (1-t) \left(4t - \dfrac{16}{3}\right) \\
+            &= 4t^2 - \dfrac{16}{3}t + \dfrac{32}{9} \\
+            &= 4 \left(t- \dfrac{2}{3}\right)^2 + \dfrac{16}{9} \\
+            &\geq \dfrac{16}{9}. 
+        \end{align*}
+        等号成立条件は, $t=\dfrac{2}{3}$であり, これは$0\leq t\leq 1$を満たす. 
+        このとき, 点Pは辺BCを1:2に内分する点である. また, $\mathrm{PG} = \sqrt{|\oraw{\mathrm{PG}}|^2 } = \dfrac{4}{3}$. 
+
+        以上より, 点Pは辺BCを1:2に内分する点である時, PGは最小値$\dfrac{4}{3}$をとる. 
+
+    \end{itemize}
+    
+    \subsection{解説}
+    ベクトルの問題では, 基底(一次独立かつ, 空間の任意のベクトルが基底のベクトルの一次結合で表せる)
+    に着目して式変形しよう. 本問では例えば, $\left\{\oraw{\mathrm{OA}}, \oraw{\mathrm{OB}}, \oraw{\mathrm{OC}}\right\}$
+    が基底である. 
+    
+    \section{大問５}
+    \subsection{問題}
+
+    \subsection{解答}
+
+    \subsection{解説}
+
+    \section{大問６}
+    \subsection{問題}
+
+    \subsection{解答}
+
+    \subsection{解説}
+
+\end{document}
