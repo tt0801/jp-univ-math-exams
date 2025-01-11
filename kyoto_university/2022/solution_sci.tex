@@ -284,10 +284,95 @@
     
     \section{大問５}
     \subsection{問題}
+    曲線$C: y=\cos ^3 x \ \left(0 \leq x \leq \dfrac{\pi}{2}\right)$, $x$軸および
+    $y$軸で囲まれる図形の面積を$S$とする. $0<t<\dfrac{\pi}{2}$とし, $C$上の点Q$(t, \cos ^3 t)$
+    と原点$O$およびP$(t,0)$, R$(0, \cos ^3 t)$を頂点に持つ長方形OPQRの面積を$f(t)$とする. 
+    このとき, 次の各問に答えよ. 
+    \begin{itemize}
+        \item [(1)] $S$を求めよ. 
+        \item [(2)] $f(t)$は最大値をただ１つの$t$でとることを示せ. そのときの$t$を$\al$
+        とすると, $f(\al) = \dfrac{\cos ^4 \al}{3 \sin \al}$であることを示せ. 
+        \item [(3)] $\dfrac{f(\al)}{S} < \dfrac{9}{16}$を示せ. 
+    \end{itemize}
 
     \subsection{解答}
+    \begin{itemize}
+        \item [(1)] 求める面積$S$は, 
+        \begin{align*}
+            S &= \int_0^{\dfrac{\pi}{2}} \cos ^3 x \ dx \\
+            &= \int_0^{\dfrac{\pi}{2}} (1- \sin^2 x) \cos x \ dx \\
+            &= \left[ \sin x - \dfrac{1}{3} \sin^3 x\right]_0^{\dfrac{\pi}{2}} \\
+            &= \dfrac{2}{3}
+        \end{align*}
+        である. 
+        \item [(2)] $f(t) = t \cos ^3 t$である. 
+        \begin{align*}
+            f'(t) &= \cos ^3 t - 3t\cos ^2 t\sin t \\
+            &=  \cos ^2 t(\cos t - 3t\sin t) \\
+        \end{align*}
+        $0 < t < \dfrac{\pi}{2}$において, $\cos ^2 t >0$なので, 
+        $f'(t)$の0との大小関係は$g(t):=\cos t - 3t\sin t$の0との大小関係と一致する. 
+        \begin{align*}
+            g'(t) &= - \sin t- 3\sin ^2 t -3t \cos t \\
+            & < 0
+        \end{align*}
+        であるので, $g(t)$は$0 < t < \dfrac{\pi}{2}$において単調減少である. 
+        \begin{align*}
+            \lim_{t \to +0} g(t) = 1>0,  \quad 
+            \lim_{t \to \dfrac{\pi}{2}-0} g(t) &= -\dfrac{3}{2}\pi <0
+        \end{align*}
+        であるから中間値の定理より$g(\al) = 0$となる$0<\al< \dfrac{\pi}{2}$となる
+        $\al$が存在する. $f(t)$の増減表をかくと, 
+
+        \[
+            \begin{array}{|c|c|c|c|c|c|}
+            \hline
+            x     & 0 &   & \al &   & \dfrac{\pi}{2} \\ \hline
+            g(x)  &   & + & 0      & - & \\ \hline
+            f'(x) &   & + & 0      & - &  \\ \hline
+            f(x)  &   & \nearrow & \mathrm{最大} & \searrow & \\ \hline
+            \end{array}
+        \]
+        だから, $f(t)$は最大値を$t=\al$でのみ取る. $g(\al) =0$すなわち, 
+        \begin{equation*}
+            \cos \al - 3\al \sin \al =0
+        \end{equation*}
+        に注意すると, $\al = \dfrac{\cos \al}{3\sin \al}$であるから, 
+        \begin{align*}
+            f(\al) &= \al \cos ^3 \al \\
+            &= \al \cos ^3 \al \\
+            &= \dfrac{\cos ^4 \al}{3\sin \al}
+        \end{align*}
+        となる. 
+
+        \item [(3)] 
+        \begin{align*}
+            g\left(\dfrac{\pi}{6}\right) 
+            &= \dfrac{\sqrt{3}}{2} -3 \cdot \dfrac{\pi}{6} \cdot \dfrac{1}{2} \\
+            &= \dfrac{2\sqrt{3} - \pi }{4} \\
+            & >0
+        \end{align*}
+        であるから, $\dfrac{\pi}{6} < \al   \ \left(< \dfrac{\pi}{2}\right)$である. ゆえに, 
+        \begin{align*}
+            f(\al) 
+            &= \dfrac{\cos ^4 \al}{3\sin \al} \\
+            &< \dfrac{\cos ^4 \dfrac{\pi}{6}}{3\sin \dfrac{\pi}{6}} \\
+            &< \dfrac{\left(\dfrac{\sqrt{3}}{2}\right)^4}{3\cdot \dfrac{1}{2}} \\
+            & = \dfrac{3}{8}
+        \end{align*}
+        である. 両辺$S=\dfrac{2}{3}$で割って, 
+        \begin{align*}
+            \dfrac{f(\al)}{S} < \dfrac{9}{16}
+        \end{align*}
+        を得る. 
+    \end{itemize}
 
     \subsection{解説}
+    $x,y$についての有理関数$Q(x,y)$について, $Q(\cos x, \sin x)$は原理的に
+    高校数学の範囲で積分を計算できる. $Q(x,y)$の形に応じて様々なテクニックが
+    あるので, 復習しよう. 
+
+
 
     \section{大問６}
     \subsection{問題}
