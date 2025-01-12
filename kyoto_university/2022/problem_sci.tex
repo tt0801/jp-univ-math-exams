@@ -1,0 +1,101 @@
+\documentclass[dvipdfmx,a4paper]{jsarticle}
+    \pagestyle{plain}
+    \usepackage{amsmath}
+    \usepackage{amsthm}
+    \usepackage{amssymb}
+    \usepackage{graphicx}
+    \usepackage{tikz}
+    \usepackage{tkz-euclide}
+    \usepackage{here}
+    \usepackage{cancel}
+
+    \usetikzlibrary{angles}
+
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\C}{\mathbb{C}}
+    \newcommand{\Z}{\mathbb{Z}}
+    \newcommand{\N}{\mathbb{N}}
+    \newcommand{\Q}{\mathbb{Q}}
+    \newcommand{\comb}[2]{{}_{#1}\mathrm{C}_{#2}}
+    \newcommand{\perm}[2]{{}_{#1}\mathrm{P}_{#2}}
+    \newcommand{\Lra}{\Leftrightarrow}
+    \newcommand{\al}{\alpha}
+    \newcommand{\be}{\beta}
+    \newcommand{\ga}{\gamma}
+    \newcommand{\om}{\omega}
+    \newcommand{\De}{\Delta}
+    \newcommand{\oraw}{\overrightarrow}
+    \newcommand{\bs}{\backslash}
+    \newcommand{\2}{I\hspace{-1pt}I}
+    \newcommand{\3}{I\hspace{-1pt}I\hspace{-1pt}I}
+
+    \newtheorem{cs}{Case}
+    \newtheorem{cas}{Case}
+    \newtheorem{case}{Case}
+    \newtheorem{apf}{別解}
+    \newtheorem{anpf}{別解}
+
+    \usetikzlibrary{calc}
+    \title{２０２２年度京大数学（理系）の問題}
+    \author{tt0801}
+    \date{\today}
+    
+    \begin{document}
+    \maketitle
+    \section{大問１}
+    $5.4 < \log_4 2022 < 5.5$であることを示せ. ただし, $0.301 < \log_{10} 2 < 0.3011$であることは用いてよい. 
+
+    \section{大問２}
+    箱の中に1から$n$までの番号がついた$n$枚の札がある. ただし, $n\geq 5$とし, 同じ番号の札はないとする. 
+    この箱から3枚の札を同時に取り出し, 札の番号を小さい順に$X, Y, Z$とする. このとき, 
+    $Y-X \geq 2$かつ$Z-Y \geq 2$となる確率を求めよ. 
+
+
+
+    \section{大問３}
+    $n$を自然数とする. ３つの整数$n^2+2$, $n^4+2$, $n^6+2$の最大公約数$A_n$を求めよ. 
+
+
+    \section{大問４}
+    四面体OABCが
+    \begin{equation*}
+        \mathrm{
+            OA = 4,\ OB=AB=BC=3,\ OC=AC=2\sqrt{3}
+        }
+    \end{equation*}
+    を満たしているとする. 点Pを辺BC上の点とし, $\triangle \mathrm{OAP}$の
+    重心をGとする. このとき, 次の各問に答えよ. 
+    \begin{itemize}
+        \item [(1)] $\oraw{\mathrm{PG}} \perp \oraw{\mathrm{OA}}$を示せ. 
+        \item [(2)] Pが辺BC上を動くとき, PGの最小値を求めよ. 
+    \end{itemize}
+
+    
+    \section{大問５}
+    曲線$C: y=\cos ^3 x \ \left(0 \leq x \leq \dfrac{\pi}{2}\right)$, $x$軸および
+    $y$軸で囲まれる図形の面積を$S$とする. $0<t<\dfrac{\pi}{2}$とし, $C$上の点Q$(t, \cos ^3 t)$
+    と原点$O$およびP$(t,0)$, R$(0, \cos ^3 t)$を頂点に持つ長方形OPQRの面積を$f(t)$とする. 
+    このとき, 次の各問に答えよ. 
+    \begin{itemize}
+        \item [(1)] $S$を求めよ. 
+        \item [(2)] $f(t)$は最大値をただ１つの$t$でとることを示せ. そのときの$t$を$\al$
+        とすると, $f(\al) = \dfrac{\cos ^4 \al}{3 \sin \al}$であることを示せ. 
+        \item [(3)] $\dfrac{f(\al)}{S} < \dfrac{9}{16}$を示せ. 
+    \end{itemize}
+
+
+
+
+    \section{大問６}
+    数列 $\{x_n\}, \{y_n\}$ を次の式
+    \[
+        x_1 = 0, \quad x_{n+1} = x_n + n + 2\cos\left( \frac{2\pi x_n}{3} \right) \quad (n=1, 2, 3, \ldots)
+    \]
+    \[
+        y_{3m+1} = 3m, \quad y_{3m+2} = 3m+2, \quad y_{3m+3} = 3m+4 \quad (m=0, 1, 2, \ldots)
+    \]
+    により定める. このとき, 数列 $\{x_n - y_n\}$ の一般項を求めよ. 
+
+
+
+\end{document}
