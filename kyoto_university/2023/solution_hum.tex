@@ -1,0 +1,120 @@
+\documentclass[dvipdfmx,a4paper]{jsarticle}
+    \pagestyle{plain}
+    \usepackage{amsmath}
+    \usepackage{amsthm}
+    \usepackage{amssymb}
+    \usepackage{graphicx}
+    \usepackage{tikz}
+    \usepackage{tkz-euclide}
+    \usepackage{here}
+    \usepackage{cancel}
+
+    \usetikzlibrary{angles}
+
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\C}{\mathbb{C}}
+    \newcommand{\Z}{\mathbb{Z}}
+    \newcommand{\N}{\mathbb{N}}
+    \newcommand{\Q}{\mathbb{Q}}
+    \newcommand{\Lra}{\Leftrightarrow}
+    \newcommand{\al}{\alpha}
+    \newcommand{\be}{\beta}
+    \newcommand{\ga}{\gamma}
+    \newcommand{\om}{\omega}
+    \newcommand{\De}{\Delta}
+    \newcommand{\oraw}{\overrightarrow}
+    \newcommand{\bs}{\backslash}
+    \newcommand{\2}{I\hspace{-1pt}I}
+    \newcommand{\3}{I\hspace{-1pt}I\hspace{-1pt}I}
+
+    \newtheorem{cs}{Case}
+    \newtheorem{cas}{Case}
+    \newtheorem{case}{Case}
+    \newtheorem{apf}{別解}
+    \newtheorem{anpf}{別解}
+
+    \usetikzlibrary{calc}
+    \title{２０２３年度京大数学（文系）の解答}
+    \author{tt0801}
+    \date{\today}
+    
+    \begin{document}
+    \maketitle
+    \section{大問１}
+    \subsection{問題}
+    次の各問に答えよ. 
+
+    \begin{itemize}
+        \item [問1] \quad $n$ を自然数とする. 1個のさいころを $n$ 回投げるとき, 出た目の積が 5 で割り切れる確率を求めよ. 
+        \item [問2] \quad 次の式の分母を有理化し, 分母に 3 乗根の記号が含まれない式として表せ. 
+            \[
+                \frac{55}{2 \sqrt[3]{9} + \sqrt[3]{3} + 5}
+            \]
+    \end{itemize}
+
+    \subsection{解答}
+    \begin{itemize}
+        \item [問1] \quad 出た目の積が5で割り切れる事象の余事象は, いずれの目も5でない事象であり, 
+            その確率は, $\left(\dfrac{5}{6}\right)^n$である. よって, 求める確率は, $1-\left(\dfrac{5}{6}\right)^n$
+            である. 
+        \item [問2] \quad $a=2 \sqrt[3]{9}$, $b=\sqrt[3]{3}$, $c=5$とおく. 
+        \begin{align*}
+            (a + b +c)(a^2 + b^2 + c^2 - ab -bc -ca) &= a^3 + b^3 + c^3 -3abc \\
+            &= 72 + 3 + 125 -90 \\
+            &= 110
+        \end{align*}
+        である. よって, 
+        \begin{align*}
+            a^2 + b^2 + c^2 - ab -bc -ca 
+            &= 12 \sqrt[3]{3} + \sqrt[3]{9} + 25 - 6 -5\sqrt[3]{3} - 10\sqrt[3]{9} \\
+            &= -9 \sqrt[3]{9} + 7 \sqrt[3]{3} + 19
+        \end{align*}
+        を分母分子にかけて, 
+        \begin{align*}
+            \dfrac{55}{2 \sqrt[3]{9} + \sqrt[3]{3} + 5}
+            &= \dfrac{55(-9 \sqrt[3]{9} + 7 \sqrt[3]{3} + 19)}{110} \\
+            &= \dfrac{-9 \sqrt[3]{9} + 7 \sqrt[3]{3} + 19}{2}
+        \end{align*}
+        と有理化できる. 
+    \end{itemize}
+
+    \subsection{別解}
+    \begin{itemize}
+        \item [問2] $x,y,z$を実数とする. 
+        \begin{align*}
+            (2 \sqrt[3]{9} + \sqrt[3]{3} + 5)(x \sqrt[3]{9} + y\sqrt[3]{3} + z) 
+            &= (5x+y+2z)\sqrt[3]{9} + (6x + 5y + z)\sqrt[3]{3} + (3x + 6y + 5z)
+        \end{align*}
+        である. $5x+y+2z=6x + 5y + z=0$を$y,z$について解くと, 
+        \begin{equation*}
+            y = -\dfrac{7}{9}x, \quad z = - \dfrac{19}{9}x
+        \end{equation*}
+        である. そこで, $(x,y,z)=(-9,7,19)$とおけば, 
+        \begin{align*}
+            (2 \sqrt[3]{9} + \sqrt[3]{3} + 5)(-9 \sqrt[3]{9} + 7\sqrt[3]{3} + 19) 
+            &= 3\cdot (-9) + 6\cdot 7 + 5 \cdot 19 \\
+            &= 110
+        \end{align*}
+        である. 以上より, 
+        \begin{align*}
+            \dfrac{55}{2 \sqrt[3]{9} + \sqrt[3]{3} + 5}
+            &= \dfrac{55(-9 \sqrt[3]{9} + 7 \sqrt[3]{3} + 19)}{110} \\
+            &= \dfrac{-9 \sqrt[3]{9} + 7 \sqrt[3]{3} + 19}{2}
+        \end{align*}
+        と有理化できる. 
+    \end{itemize}
+
+
+
+    \subsection{解説}
+    次の因数分解は導出できるようにしよう. 
+    \[
+        a^3 + b^3 + c^3 -3abc = (a + b +c)(a^2 + b^2 + c^2 - ab -bc -ca).
+    \]
+    問2は, この因数分解を知らなくても別解のように有理化を導くことができる. しかも, 
+    別解の方法は原理的に$n$乗根の場合にも対応している. 
+    
+    
+
+
+\end{document}
