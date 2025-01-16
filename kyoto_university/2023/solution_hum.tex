@@ -159,4 +159,96 @@
     \subsection{解説}
     一次独立なベクトル$\posv{OA},\posv{OB},\posv{OC}$に着目して表せばよい. 
 
+    \section{大問３}
+    \subsection{問題}
+    \begin{itemize}
+        \item [(1)] $\cos 2\theta$と$\cos 3\theta$を$\cos \theta$の式として表せ. 
+        \item [(2)] 半径1の円に内接する正五角形の一辺の長さが1.15より大きいか否かを理由を付けて判定せよ. 
+    \end{itemize}
+
+    \subsection{解答}
+    \begin{itemize}
+        \item [(1)] 二倍角の公式, 三倍角の公式より, 
+        \begin{align*}
+            \cos 2\theta &= 2\cos^2 \theta -1, \\
+            \cos 3\theta &= 4\cos^3 \theta -3 \cos \theta.
+        \end{align*}
+        \item [(2)] 半径1の円に内接する正五角形の一辺の長さを$h$とすると, 
+        図より
+        \begin{equation*}
+            h = 2 \sin \dfrac{\pi}{5}
+        \end{equation*}
+        である. 
+        \begin{tikzpicture}
+            % Draw the unit circle
+            \draw[thick] (0,0) circle(2);
+        
+            % Define the vertices of the pentagon
+            \coordinate (O) at (0,0);
+            \foreach \i in {1,2,3,4,5} {
+                \coordinate (P\i) at ({2*cos(90 + \i*360/5)}, {2*sin(90 + \i*360/5)});
+            }
+            \coordinate (M) at ({cos(90 - 360/5)}, {1 + sin(90 - 360/5)});
+        
+            % Draw the pentagon
+            \draw[thick] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- cycle;
+        
+            % Draw radius lines to vertices
+            \foreach \i in {1,2,3} {
+                \draw[dashed] (0,0) -- (P\i);
+            }
+            \draw[thick] (0,0) -- (P4);
+            \draw[thick] (0,0) -- (P5);
+            \draw[thick] (0,0) -- (M);
+
+            \pic[draw, -, "$\dfrac{\pi}{5}$", angle radius=0.5cm, angle eccentricity=2.4] {angle=P4--O--M};
+            \pic[draw, angle radius=0.3cm] {right angle=P5--M--O};
+
+        \end{tikzpicture}
+
+        \begin{align*}
+            \sin 5\theta 
+            &= \sin (2\theta + 3\theta) \\
+            &= \sin 2\theta \cos 3\theta + \cos 2\theta \sin 3\theta \\
+            &= 2\sin \theta \cos \theta (4\cos^3 \theta -3 \cos \theta) + (2\cos^2 \theta -1)(-4 \sin^3 \theta + 3\sin \theta) \\
+            &= \sin \theta \left\{2\cos^2 \theta (4\cos^2 \theta -3)+ (2\cos^2 \theta -1)(-4 \sin^2 \theta + 3)\right\} \\
+            &= \sin \theta \left[2(1-\sin^2\theta)\left\{4(1-\sin^2\theta)  -3\right\}+ \left\{2(1-\sin^2\theta)  -1\right\}(-4 \sin^2 \theta + 3)\right] \\
+            &= \sin \theta \left\{2(1-\sin^2\theta)(-4\sin^2 \theta +1)+ (-2\sin^2 \theta +1)(-4 \sin^2 \theta + 3)\right\} \\
+            &= \sin \theta (16\sin^4\theta - 20 \sin^2 \theta +5)
+        \end{align*}
+        である. $\theta = \dfrac{\pi}{5}$を代入すると, 左辺は$\sin 5\theta = \sin \pi =0$なので, 
+        $\sin \dfrac{\pi}{5} >0$に注意すると, 
+        \begin{align*}
+            16\sin^4\dfrac{\pi}{5} - 20 \sin^2\dfrac{\pi}{5}  +5 = 0
+        \end{align*}
+        である. すなわち, $\alpha = \sin \dfrac{\pi}{5}$とおくと, $\alpha^2$は, $16x^2 -20x + 5$の
+        根である. 同様にして, $\beta = \sin \dfrac{2\pi}{5}$とおくと, 
+        $\beta^2$も$16x^2 -20x + 5$の根である. $0<\dfrac{\pi}{5} < \dfrac{2\pi}{5}<\dfrac{\pi}{2}$より, 
+        $0<\alpha < \beta$に注意すると, $16x^2 -20x + 5=0$を解いて, 
+        \begin{align*}
+            \alpha^2 = \dfrac{5-\sqrt{5}}{8}, \quad \beta^2 = \dfrac{5+\sqrt{5}}{8}
+        \end{align*}
+        を得る. $h=2\alpha$より, 
+        \begin{align*}
+            h^2 - \left(\dfrac{23}{20}\right)^2 &= 4\alpha ^2 - \left(\dfrac{23}{20}\right)^2\\
+            &= \dfrac{5-\sqrt{5}}{2} - \dfrac{529}{400} \\
+            &= \dfrac{471-200\sqrt{5}}{400} \\
+            & > 0
+        \end{align*}
+        だから, $h > \dfrac{23}{20} = 1.15$である. 
+
+        以上より, 半径1の円に内接する正五角形の一辺の長さは, 1.15よりも大きい. 
+    \end{itemize}
+    \subsection{解説}
+    $\sin \dfrac{\pi}{5}$の値を評価したいので, $\sin \dfrac{\pi}{5}$が満たす方程式を考えたい. 
+    そのため5倍角の公式を導出した. チェビシェフの多項式などの背景知識を経験したことがないと, 解くのは難しかったかもしれない. 
+
+    余談だが, 解と根の違いは次の通りである. 
+    \begin{itemize}
+        \item 解は, 方程式や不等式を満たす答えである. すなわち, 何かしら等号($=$)や不等式($>,<,\geq, \leq$)で結ばれる式に対して使用される. 
+        \item 根は, 多項式に代入して0となるような値である. すなわち, 多項式$P(x)$について$x=\alpha$が$P(x)=0$
+        の解であるならば, $\alpha$は多項式$P(x)$の根である. 
+
+    \end{itemize}
+
 \end{document}
