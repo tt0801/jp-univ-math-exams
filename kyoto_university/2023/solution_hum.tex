@@ -262,6 +262,47 @@
     \end{itemize}
 
     \subsection{別解}
+    \begin{itemize}
+        \item [(2)] 半径1の円に内接する正五角形の一辺の長さを$h$とすると, 
+        図より
+        \begin{align*}
+            h &= 2 \sin \dfrac{\pi}{5} \\
+            &= 2 \sqrt{1 - \cos^2 \dfrac{\pi}{5}}
+        \end{align*}
+        である(図は解答と同じなので省略). 
+        $\theta = \dfrac{\pi}{5}$とおくと, $5\theta = \pi$なので, $\cos 2\theta = \cos (\pi - 3\theta) = - cos 3\theta$
+        である. (1)を踏まえて, 
+        \begin{equation*}
+            2\cos^2 \theta -1 = - \left(4\cos^3 \theta -3 \cos \theta \right)
+        \end{equation*}
+        である. この式を整理して, 
+        \begin{equation*}
+            (\cos \theta + 1)(4 \cos^2 \theta -2 \cos \theta -1) = 0
+        \end{equation*}
+        を得る. ゆえに, $\cos \theta$の値は
+        \begin{equation*}
+            \cos \theta = -1, \dfrac{1 \pm \sqrt{5}}{4}
+        \end{equation*}
+        のいずれかである. $0 < \theta = \dfrac{\pi}{5} < \dfrac{\pi}{2}$なので, 
+        $\cos \theta > 0$より, 
+        \begin{equation*}
+            \cos \theta = \dfrac{1 + \sqrt{5}}{4}
+        \end{equation*}
+        と定まる. 
+        この時, 
+        \begin{align*}
+            h^2 - \left(\dfrac{23}{20}\right)^2 
+            &= 4\left(1 - \cos^2 \dfrac{\pi}{5}\right) - \left(\dfrac{23}{20}\right)^2\\
+            &= 4\left\{1 - \left(\dfrac{1 + \sqrt{5}}{4} \right)^2\right\}- \left(\dfrac{23}{20}\right)^2 \\
+            &= \dfrac{471-200\sqrt{5}}{400} \\
+            & > 0
+        \end{align*}
+        だから, $h > \dfrac{23}{20} = 1.15$である. 
+    
+        以上より, 半径1の円に内接する正五角形の一辺の長さは, 1.15よりも大きい. 
+    
+    \end{itemize}
+
 
     \subsection{解説}
     $\sin \dfrac{\pi}{5}$の値を評価したいので, $\sin \dfrac{\pi}{5}$が満たす方程式を考えたい. 
