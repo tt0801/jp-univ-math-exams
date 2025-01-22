@@ -379,4 +379,51 @@
     とりあえず, $a_n$と$S_n$の関係式$a_{n+1} = S_{n+1} - S_n$に代入すると, 
     解ける漸化式が得られる. 
 
+    \section{大問５}
+    \subsection{問題}
+    整式 $f(x)$ が恒等式
+    \begin{equation*}
+        f(x) + \int_{-1}^1 (x-y)^2 f(y) dy = 2x^2 + x + \frac{5}{3}
+    \end{equation*}
+    を満たすとき, $f(x)$ を求めよ. 
+
+    \subsection{解答}
+    両辺の$x$の次数に着目する. 左辺第二項は, $x$について二次式であるから, 
+    $f(x) = \mathrm{(右辺)} - \mathrm{(左辺第二項)}$は高々２次の多項式である. 
+    ゆえに, 実数$a,b,c$を用いて, $f(x) = ax^2 + bx + c$と表せる. 
+
+    この時, 
+    \begin{align*}
+        \mathrm{(左辺第二項)} 
+        &= \int_{-1}^1 (x-y)^2 (ay^2 + by + c) dy \\
+        &= \int_{-1}^1 ay^4 +(-2ax + b)y^3 +(ax^2 -2bx+ c)y^2 +(bx^2 -2cx)y + cx^2 dy \\
+        &= 2\int_{0}^1 ay^4 +(ax^2-2bx + c)y^2 + cx^2 dy \\
+        &= 2\left[\dfrac{1}{5}a y^5 + \dfrac{ax^2-2bx + c}{3} y^3 + cx^2 y\right]_0^1 \\
+        &= \dfrac{2}{5}a + \dfrac{2ax^2-4bx + 2c}{3} + 2cx^2 \\
+        &= \left(\dfrac{2}{3}a+2c\right)x^2 -\dfrac{4}{3}bx + \dfrac{2}{5}a + \dfrac{2}{3}c
+    \end{align*}
+    であるから, 与えられた恒等式は, 
+    \begin{align*}
+        2x^2 + x + \frac{5}{3} 
+        &= (ax^2+bx+c) + \left\{\left(\dfrac{2}{3}a+2c\right)x^2 -\dfrac{4}{3}bx + \dfrac{2}{5}a + \dfrac{2}{3}c\right\} \\
+        &= \left(\dfrac{5}{3}a+2c\right)x^2 - \dfrac{1}{3}bx + \dfrac{2}{5}a + \dfrac{5}{3}c
+    \end{align*}
+    と表せる. これが全ての実数$x$について成立するので, 係数が全て一致しなければならない. 
+    すなわち, 
+    \begin{equation*}
+        \dfrac{5}{3}a+2c = 2, \quad -\dfrac{1}{3}b = 1, \quad \dfrac{2}{5}a + \dfrac{5}{3}c = \frac{5}{3} 
+    \end{equation*}
+    である. 二つ目の等式より$b = -3$である. 
+    一つ目の等式と三つ目の等式を連立して$a = 0, c = 1$を得る. 
+    
+
+    以上より, 
+    \begin{equation*}
+        f(x) = -3x + 1
+    \end{equation*}
+    と求まる. 逆にこの時, $f(x)$が恒等式を満たすことは明らか. 
+
+    \subsection{解説}
+    $f(x)$は整式なので, 次数に着目しよう. 
+
 \end{document}
